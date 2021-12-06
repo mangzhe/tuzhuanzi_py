@@ -1,1 +1,7 @@
 ##创建一个简单的图片转字符的python程序。
+参考的学习资料是：
+https://www.lanqiao.cn/live/151/
+使用的语言为python
+要用到的库是
+pillow 和 argparse
+原理是将图片的rgb转化为灰度值，在映射到一串字符上。
