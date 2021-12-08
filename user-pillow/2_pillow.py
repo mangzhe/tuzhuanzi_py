@@ -13,8 +13,11 @@ def rgbto(r,g,b,char_list):
 char_list=list("☑✔☐☒✘♥♠♤♂♀★☆※卐■□◆◇▲△●○◎⊕⊙«»큐〓㊚㊛囍㊒㊖")
 
 
-tu=Image.open('text.png')
+tu=Image.open('test.png')
 
 print(tu.width)
+print(tu.height)
+print(tu.mode)
+print( * tu.getpixel((409,365))[:3])
 
 
