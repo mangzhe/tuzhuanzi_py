@@ -1,3 +1,5 @@
+#/usr/bin/python
+#-*- encoding : utf-8 -*-
 #Author : mangzhe
 #Creat time :2021/12/09
 #Think of desige : no
@@ -21,14 +23,14 @@ PASH = args.p
 
 WIDTH = args.w
 
-chars=list("💯💢♨️🚷🚯🚳🚱🔞📵🚫⭕️🛑⛔️📛📛❌㊗️🈴🈵🈹❤️🧡💛💚💙💜🖤🤍🤎💔❣️💕💞💓💗💖📗📘📙📒")
+chars=list("!1?*%&#@")
 
 
 def x_y(r,g,b,alpha=256):
     if alpha==0:
         value=1
     else:
-        huidu = int(( r + g + b ) /3)
+        huidu = int((r*299 + g*578 + b*114)/1000)
         value = int(huidu * len(chars) / alpha)
     return value
 
@@ -38,7 +40,7 @@ def x_y(r,g,b,alpha=256):
 def main():
     im=Image.open(PASH)
     HEIGHT=int(im.height * WIDTH / im.width)
-    im = im.resize(( WIDTH,HEIGHT ), Image.NEAREST).rotate(90)
+    im = im.resize(( WIDTH,HEIGHT ), Image.NEAREST).rotate(-90).transpose(Image.FLIP_LEFT_RIGHT)
     TXT=""
     for j in range(WIDTH):
         for i in range(HEIGHT):
